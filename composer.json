@@ -1,0 +1,17 @@
+{
+    "name": "alex/livros",
+    "autoload": {
+        "psr-4": {
+            "alex\\livros\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alex",
+            "email": "alexspassoni@gmail.com"
+        }
+    ],
+    "require": {
+        "coffeecode/router": "^2.0"
+    }
+}
