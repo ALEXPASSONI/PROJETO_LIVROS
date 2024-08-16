@@ -1,0 +1,32 @@
+.container-login {
+    background-color: rgb(245, 237, 237);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.container-login form {
+    background-color: rgb(180, 160, 252);
+    width: 40%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 1px rgba(red, green, blue, alpha);
+
+}
+.container-logo{
+    display: flex;
+    justify-content: center;
+}
+
+.container-logo img{
+    height: 50px;
+}
+.container-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

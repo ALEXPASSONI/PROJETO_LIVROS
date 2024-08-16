@@ -13,6 +13,6 @@ class Login
 
     public function execute()
     {
-        $this->template->render("user/login");
+        $this->template->render("user/login",false);
     }
 }
