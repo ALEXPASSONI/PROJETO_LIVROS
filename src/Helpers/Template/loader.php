@@ -1,5 +1,5 @@
 <?php
-namespace alex\livros\Helpers\Template;
+namespace Alex\Livros\Helpers\Template;
 
 class Loader
 {

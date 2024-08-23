@@ -1,7 +1,7 @@
 <?php
-namespace alex\livros\Controllers\User;
+namespace Alex\Livros\Controllers\User;
 
-use alex\livros\Helpers\Template\Loader;
+use Alex\Livros\Helpers\Template\Loader;
 
 class Login
 {

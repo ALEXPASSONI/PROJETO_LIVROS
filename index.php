@@ -2,7 +2,7 @@
 
 require_once './vendor/autoload.php';
 
-use alex\livros\Routers\Loader;
+use Alex\Livros\Routers\Loader;
 
 $loader = new Loader();
 $loader->execute();

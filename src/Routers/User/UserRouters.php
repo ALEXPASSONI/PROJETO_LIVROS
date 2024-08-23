@@ -1,10 +1,10 @@
 <?php
 
-namespace alex\livros\Routers\User;
+namespace Alex\Livros\Routers\User;
 
 use CoffeeCode\Router\Router;
-use alex\livros\Controllers\User\Login;
-use alex\livros\Controllers\User\Register;
+use Alex\Livros\Controllers\User\Login;
+use Alex\Livros\Controllers\User\Register;
 
 class UserRouters
 {

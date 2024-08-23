@@ -2,7 +2,7 @@
     "name": "alex/livros",
     "autoload": {
         "psr-4": {
-            "alex\\livros\\": "src/"
+            "Alex\\Livros\\": "src/"
         }
     },
     "authors": [
