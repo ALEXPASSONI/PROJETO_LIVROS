@@ -16,25 +16,25 @@
 <body>
     <div class="container-login">
 
-        <form action="">
+        <form action="/projeto_livros/register/save" method="post">
             <div class="container-logo"><img src="/PROJETO_LIVROS/public/img/logo6" alt="logo"></div>
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="nome" class="form-control" id="nome">
+                <label for="name" class="form-label">Nome</label>
+                <input name="name" type="name" class="form-control" id="name">
             </div>
             <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="telefone" class="form-control" id="telefone">
+                <label for="phone" class="form-label">Telefone</label>
+                <input name="phone" type="phone" class="form-control" id="phone">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email </label>
-                <input type="email" class="form-control" id="email"placeholder="name@example.com">
+                <input name="email" type="email" class="form-control" id="email"placeholder="name@example.com">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password">
+                <input name="password" type="password" class="form-control" id="password">
             </div>
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
             <div class="container-action">
                 
                 <a class="letra" href="login">Voltar</a>

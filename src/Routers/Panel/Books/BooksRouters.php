@@ -19,6 +19,7 @@ class BooksRouters
         $this->router->namespace('Alex\Livros\Controllers\Panel\Books');
         $this->router->get("/panel/books", 'Books:execute');
         $this->router->get("/panel/books/create", 'Create:execute');
+        
 
     }
 
