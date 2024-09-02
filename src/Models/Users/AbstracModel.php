@@ -19,6 +19,29 @@ abstract class AbstractModel
 
     }
 
+  //"INSERT INTO users (name, surname, sex) VALUES (:name, :surname, :sex)"
+  public function create($data)
+  {
+      echo "metodo para criação de uma data";
+  }
 
-    
+  public function findOne()
+  {
+
+  }
+
+  public function findAll()
+  {
+
+  }
+
+  public function update()
+  {
+
+  }
+
+  public function delete()
+  {
+      
+  }
 }
