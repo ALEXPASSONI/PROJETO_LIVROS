@@ -20,21 +20,21 @@
             <div class="container-logo"><img src="/PROJETO_LIVROS/public/img/logo6" alt="logo"></div>
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
-                <input name="name" type="name" class="form-control" id="name">
+                <input name="name" required type="name" class="form-control" id="name">
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Telefone</label>
-                <input name="phone" type="phone" class="form-control" id="phone">
+                <input name="phone" required type="phone" class="form-control" id="phone">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email </label>
-                <input name="email" type="email" class="form-control" id="email"placeholder="name@example.com">
+                <input name="email" required type="email" class="form-control" id="email"placeholder="name@example.com">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Senha</label>
-                <input name="password" type="password" class="form-control" id="password">
+                <input name="password" required type="password" class="form-control" id="password">
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
             <div class="container-action">
                 
                 <a class="letra" href="login">Voltar</a>

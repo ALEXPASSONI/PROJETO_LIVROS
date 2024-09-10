@@ -1,11 +1,11 @@
 <?php
-namespace Alex\livros\Models\Users;
+namespace Alex\Livros\Models\Users;
 
 use Alex\Livros\Models\AbstractModel;
 
-class User extends AbstractModel
+class Users extends AbstractModel
 {
-    public $table = 'users';
+    public $table = 'user';
 
     
 }
