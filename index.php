@@ -2,6 +2,8 @@
 
 require_once './vendor/autoload.php';
 
+session_start();
+
 use Alex\Livros\Routers\Loader;
 // use Alex\Livros\Models\Users\Users;
 
