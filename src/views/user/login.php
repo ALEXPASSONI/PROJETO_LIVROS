@@ -10,29 +10,30 @@
     <link rel="stylesheet" href="./public/css/style.css">
 
     <title>login</title>
-</head>
-
+    </head>
 <body>
     <div class="container-login">
-
-        <form action="">
-            <div class="container-logo"><img src="/PROJETO_LIVROS/public/img/logo3" alt="logo"></div>
-            <div class="container-logo"></div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email </label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        
+        <form action="/login/validate" method="post">
+            <div class="container-logo">
+                <img src="/public/img/logo.png" alt="">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password" placeholder=>
+                <label for="email" class="form-label">Email address</label>
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
             </div>
-            <button type="button" class="btn btn-primary">Login</button>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="password" >
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
             <div class="container-action">
-                <span class="letra">Não possui conta ? </span>
-                <a class="letra" href="register">Clique aqui !</a>
+                <span>Possui conta?</span>
+                <a href="/register">clique aqui</a>
             </div>
         </form>
     </div>
 </body>
+
 
 </html>

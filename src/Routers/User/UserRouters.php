@@ -4,8 +4,10 @@ namespace Alex\Livros\Routers\User;
 
 use CoffeeCode\Router\Router;
 use Alex\Livros\Controllers\User\Login;
+use Alex\Livros\Controllers\User\LoginPost;
 use Alex\Livros\Controllers\User\Register;
 use Alex\Livros\Controllers\User\RegisterPost;
+
 
 class UserRouters
 {
@@ -17,6 +19,8 @@ class UserRouters
 
     private RegisterPost $registerPost;
 
+    private LoginPost $loginPost;
+
    
 
     public function __construct(Router $router) {
@@ -24,12 +28,17 @@ class UserRouters
         $this->login = new Login();
         $this->register = new Register();
         $this->registerPost = new RegisterPost();
+        $this->loginPost = new LoginPost();
     }
 
     public function execute()
     {
         $this->router->get("/login", function () {
             $this->login->execute();
+        });
+
+        $this->router->post("/login/validate", function ($data) {
+            $this->loginPost->execute($data);
         });
         
         $this->router->get("/register", function () {
