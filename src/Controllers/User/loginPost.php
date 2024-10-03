@@ -4,6 +4,7 @@ namespace Alex\Livros\Controllers\User;
 
 use Alex\Livros\Helpers\Message\Message;
 use Alex\Livros\Models\Users\Users;
+use Alex\Livros\Models\Users\UserSession;
 
 
 
@@ -13,10 +14,13 @@ class LoginPost
 
     protected Users $users;
 
+    protected UserSession $userSession;
+
     public function __construct()
     {
         $this->users = new Users();
         $this->message = new Message();
+        $this->userSession = new UserSession();
     }
     public function execute($data)
     {
@@ -49,6 +53,7 @@ class LoginPost
             header('location: /login');
             return;
         }
+        $this->userSession->create($user->id, $user->name, $user->email);
         header('location: /panel/scheduler/');
     }
 }
