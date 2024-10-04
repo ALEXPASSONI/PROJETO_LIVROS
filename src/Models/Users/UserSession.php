@@ -8,7 +8,7 @@ class UserSession
 {
     public function handle(Router $router) {
         if ($this->getSession() == null) {
-            $router->redirect('/login');
+            $router->redirect('/PROJETO_LIVROS/login');
         }
         return true;
     }

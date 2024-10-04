@@ -4,14 +4,19 @@ namespace Alex\Livros\Controllers\Panel\Books;
 
 use Alex\Livros\Helpers\Template\Loader;
 
-class Books{
+class Books
 
+    {
+        protected Loader $template;
+        public function __construct() {
+            $this->template = new Loader();
+        }
     
-  
+        public function execute()
+        {   
+            
+            $this->template->render('panel/books', true);
+        }
     
-
-    public function execute(){
-        echo 'Demorou, mais agora vai';
     }
-}
 

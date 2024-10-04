@@ -1,0 +1,21 @@
+
+        /* Estilos para a tabela */
+        .table-container {
+            overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+        }
+
+        .table img {
+            max-width: 80px; /* Ajusta o tamanho máximo da imagem da capa */
+            height: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center; /* Centraliza os botões */
+        }
+ 

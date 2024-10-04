@@ -19,13 +19,9 @@ class BooksRouters
        
 
         $this->router->namespace('Alex\Livros\Controllers\Panel\Books');
-        $this->router->get("/panel/books/", 'Books:execute', middleware: UserSession::class);
-
-        $this->router->get("/panel/books", 'Books:execute');
-        $this->router->get("/panel/books/create", 'Create:execute', middleware: UserSession::class);
-
+        $this->router->get("/panel/books/", 'Books:execute');
         $this->router->get("/panel/books/create", 'Create:execute');
-        $this->router->get("/panel/books/edit", 'Edit:execute', middleware: UserSession::class);
+        $this->router->get("/panel/books/edit", 'Edit:execute');
 
     }
 
