@@ -26,7 +26,7 @@ class RegisterPost
 
         if (!$this->validate->execute($data)){
             $this->message->setMessageError("Verique os campos e tente novamente");
-            header('location: /register');
+            header('location: /PROJETO_LIVROS/register');
             return;
         }
 
@@ -38,7 +38,7 @@ class RegisterPost
 
         if ($dataUser) {
             $this->message->setMessageError("Já existe um usuário com esse email");
-            header('location: /register');
+            header('location: /PROJETO_LIVROS/register');
             return;
         }
 
@@ -46,13 +46,13 @@ class RegisterPost
 
         if ($this->users->create($data) == false) {
             $this->message->setMessageError("Ocorreu um erro ao registrar, tente novamente");
-            header('location: /register');
+            header('location: /PROJETO_LIVROS/register');
             return;
         };
 
         $this->message->setMessageSuccess("Registrado com sucesso");
 
-        header('location: /login');
+        header('location: /PROJETO_LIVROS/login');
         return;
     }
 

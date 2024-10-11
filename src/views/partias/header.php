@@ -12,12 +12,23 @@
 </head>
 <body>
   <nav>
-    <a href="#">Meu Site</a>
+    <a href="/PROJETO_LIVROS/panel/books/create">Bem vindo <?=$_SESSION["user"]["name"] ?></a>
     <ul>
       <li><a href="/PROJETO_LIVROS/panel/books">Listagem</a></li>
       <li><a href="/PROJETO_LIVROS/panel/books/create">Cadrastro de Livros</a></li>
       <li><a href="/PROJETO_LIVROS/panel/books/edit">Edição</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a href="/PROJETO_LIVROS/panel/books/logout">Sair</a>
+
+    <script>
+        const logoutButton = document.getElementById('logoutButton');
+
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            // Redireciona para a tela de login
+            window.location.href = 'login.html'; // Substitua 'login.html' pelo caminho da sua página de login
+        });
+    </script>
     </ul>
   </nav>
 

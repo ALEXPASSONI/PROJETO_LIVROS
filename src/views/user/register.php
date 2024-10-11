@@ -37,7 +37,7 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             <div class="container-action">
                 
-                <a class="letra" href="login">Voltar</a>
+                <a class="letra" href="/PROJETO_LIVROS/login">Voltar</a>
             </div>
         </form>
 

@@ -36,7 +36,7 @@ class LoginPost
             $this->message->setMessageError("Os campos devem conter valores preenchido");
         }
         if(!$success) {
-            header('location: /login');
+            header('location: /PROJETO_LIVROS/login');
             return;
         }
         $user = $this->users->findOne([
@@ -44,17 +44,17 @@ class LoginPost
         ]);
         if(!$user) {
             $this->message->setMessageError("Usuário não encontrado");
-            header('location: /login');
+            header('location: /PROJETO_LIVROS/login');
             return;
         }
         
         if(!password_verify($data['password'], $user->password)) {
             $this->message->setMessageError("Usuario ou senha invalidos");
-            header('location: /login');
+            header('location: /PROJETO_LIVROS/login');
             return;
         }
         $this->userSession->create($user->id, $user->name, $user->email);
-        header('location: /panel/scheduler/');
+        header('location: /PROJETO_LIVROS/panel/books/');
     }
 }
 

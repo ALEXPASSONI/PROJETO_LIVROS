@@ -14,7 +14,7 @@
 <body>
     <div class="container-login">
         
-        <form action="/login/validate" method="post">
+        <form action="/PROJETO_LIVROS/login/validate" method="post">
             <div class="container-logo">
                 <img src="/public/img/logo.png" alt="">
             </div>
@@ -29,7 +29,7 @@
             <button type="submit" class="btn btn-primary">Login</button>
             <div class="container-action">
                 <span>Possui conta?</span>
-                <a href="/register">clique aqui</a>
+                <a href="/PROJETO_LIVROS/register">clique aqui</a>
             </div>
         </form>
     </div>

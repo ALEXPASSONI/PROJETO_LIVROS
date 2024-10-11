@@ -34,15 +34,15 @@
                         <td>4</td>
                         <td>5</td>
                         <td>
-                            <button>Edit</button>
-                            <button>Deletar</button>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <button type="button" class="btn btn-warning">Editar</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <button class="btn btn-primary mt-3" onclick="window.location.href='cadastro.html'">Cadastrar Novo Livro</button>
+        <a class="btn btn-primary mt-3" href= "/PROJETO_LIVROS/panel/books/create" >Cadastrar Novo Livro</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
