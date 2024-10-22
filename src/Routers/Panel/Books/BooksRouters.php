@@ -24,6 +24,8 @@ class BooksRouters
         $this->router->get("/panel/books/create", 'Create:execute', middleware: UserSession::class);
         $this->router->get("/panel/books/edit", 'Edit:execute', middleware: UserSession::class);
         $this->router->get("/panel/books/logout", 'Logout:execute', middleware: UserSession::class);
+        $this->router->post("/panel/books/create/save", 'CreatePost:execute', middleware: UserSession::class);
+
 
     }
 

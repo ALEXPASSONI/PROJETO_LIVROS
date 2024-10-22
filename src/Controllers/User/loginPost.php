@@ -6,14 +6,10 @@ use Alex\Livros\Helpers\Message\Message;
 use Alex\Livros\Models\Users\Users;
 use Alex\Livros\Models\Users\UserSession;
 
-
-
 class LoginPost
 {
     protected Message $message;
-
     protected Users $users;
-
     protected UserSession $userSession;
 
     public function __construct()
@@ -22,40 +18,44 @@ class LoginPost
         $this->message = new Message();
         $this->userSession = new UserSession();
     }
+
     public function execute($data)
     {
-        
         $success = true;
-        if (!isset($data['email']) || !isset($data['password'])){
+
+        if (!isset($data['email']) || !isset($data['password'])) {
             $success = false;
             $this->message->setMessageError("Você precisa preencher todos os campos");
         }
-        if (empty($data['email']) || empty($data['password']))
-        {
+
+        if (empty($data['email']) || empty($data['password'])) {
             $success = false;
-            $this->message->setMessageError("Os campos devem conter valores preenchido");
+            $this->message->setMessageError("Os campos devem conter valores preenchidos");
         }
-        if(!$success) {
-            header('location: /PROJETO_LIVROS/login');
+
+        if (!$success) {
+            header('Location: /PROJETO_LIVROS/login');
             return;
         }
+
         $user = $this->users->findOne([
             "email" => $data['email']
         ]);
-        if(!$user) {
+
+        if (!$user) {
             $this->message->setMessageError("Usuário não encontrado");
-            header('location: /PROJETO_LIVROS/login');
+            header('Location: /PROJETO_LIVROS/login');
             return;
         }
-        
-        if(!password_verify($data['password'], $user->password)) {
-            $this->message->setMessageError("Usuario ou senha invalidos");
-            header('location: /PROJETO_LIVROS/login');
+
+        if (!password_verify($data['password'], $user['password'])) {
+            $this->message->setMessageError("Usuário ou senha inválidos");
+            header('Location: /PROJETO_LIVROS/login');
             return;
         }
-        $this->userSession->create($user->id, $user->name, $user->email);
-        header('location: /PROJETO_LIVROS/panel/books/');
+
+        $this->userSession->create($user->id, $user->name, $user->email, $user->password);
+
+        header('Location: /PROJETO_LIVROS/panel/books/');
     }
 }
-
-?>

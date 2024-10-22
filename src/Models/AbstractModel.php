@@ -56,14 +56,14 @@ abstract class AbstractModel
         $stmt = $this->connect->prepare($sql);
         $stmt->execute($condition);
 
-        return $stmt->fetchObject();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
     }
 
 
-    public function findAll($condition = "1", $column = "*")
+    public function findAll($condition = [], $column = "*")
     { 
         $where = "";
-        if ($condition != "1") {
+        if (count($condition) > 0) {
             foreach ($condition as $key => $value) {
                 $where.= "$key = :$key AND ";
             }
@@ -71,7 +71,7 @@ abstract class AbstractModel
         } else {
             $where = "1";
         }
-      
+
         $table = $this->table;
         $sql = "SELECT $column FROM $table WHERE " .$where;
         $stmt = $this->connect->prepare($sql);
@@ -81,7 +81,7 @@ abstract class AbstractModel
             $stmt->execute();
         }
         
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function update()

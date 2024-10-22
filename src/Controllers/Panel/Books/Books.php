@@ -3,20 +3,24 @@
 namespace Alex\Livros\Controllers\Panel\Books;
 
 use Alex\Livros\Helpers\Template\Loader;
+use Alex\Livros\Models\Bookss\Bookss;
 
-class Books
+class BookController
+{
+    protected Loader $template;
+    protected Bookss $bookss;
 
+    public function __construct()
     {
-        protected Loader $template;
-        public function __construct() {
-            $this->template = new Loader();
-        }
-    
-        public function execute()
-        {   
-            
-            $this->template->render('panel/books', true);
-        }
-    
+        $this->template = new Loader();
+        $this->bookss = new Bookss();
     }
 
+    public function execute()
+    {
+        $bookss = $this->bookss->findAll();
+        $this->template->render('panel/books', true, [
+            "bookss" => $bookss
+        ]);
+    }
+}
