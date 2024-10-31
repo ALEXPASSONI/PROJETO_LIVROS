@@ -54,7 +54,7 @@ class LoginPost
             return;
         }
 
-        $this->userSession->create($user->id, $user->name, $user->email, $user->password);
+        $this->userSession->create($user['id'], $user['name'], $user['email']);
 
         header('Location: /PROJETO_LIVROS/panel/books/');
     }

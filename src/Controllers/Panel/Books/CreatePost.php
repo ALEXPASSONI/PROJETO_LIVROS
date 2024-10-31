@@ -18,8 +18,12 @@ class CreatePost
     public function execute($data)
     {
         //deve conter alem da criação a validação dos dados     
-        $this->bookss->create($data);
-        $this->message->setMessageSuccess('Agendamento criado com sucesso');
-        header('location: /panel/books/');
+        $result = $this->bookss->create($data);
+        if($result) {
+            $this->message->setMessageSuccess('Agendamento criado com sucesso');
+        } else {
+            $this->message->setMessageError('Não foi possivel cadastrar');
+        }
+        header('location: /PROJETO_LIVROS/panel/books/');
     }
 }

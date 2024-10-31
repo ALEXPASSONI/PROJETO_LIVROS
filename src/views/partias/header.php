@@ -16,7 +16,6 @@
     <ul>
       <li><a href="/PROJETO_LIVROS/panel/books">Listagem</a></li>
       <li><a href="/PROJETO_LIVROS/panel/books/create">Cadrastro de Livros</a></li>
-      <li><a href="/PROJETO_LIVROS/panel/books/edit">Edição</a></li>
       <li><a href="/PROJETO_LIVROS/panel/books/logout">Sair</a>
 
     <script>

@@ -27,3 +27,14 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+
+    .img-capa{
+      height: 20px;
+      width: 50px;
+      object-fit: cover;
+    }
+
+    .img-preview{
+      height: 100px;
+    }

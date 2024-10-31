@@ -75,7 +75,7 @@ abstract class AbstractModel
         $table = $this->table;
         $sql = "SELECT $column FROM $table WHERE " .$where;
         $stmt = $this->connect->prepare($sql);
-        if ($condition != "1") {
+        if (count($condition) > 0)  {
             $stmt->execute($condition);
         } else {
             $stmt->execute();
@@ -89,8 +89,21 @@ abstract class AbstractModel
 
     }
 
-    public function delete()
+    public function delete($id)
     {
 
+        $table = $this->table;
+        $sql = "DELETE FROM $table WHERE id = :id";
+        $stmt = $this->connect->prepare($sql);
+        $response = $stmt->execute([
+            'id' => $id
+        ]);
+
+        if ($response) {
+            return true;
+        }
+
+        return false;
     }
 }
+
