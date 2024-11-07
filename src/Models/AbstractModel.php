@@ -13,7 +13,8 @@ abstract class AbstractModel
 
     protected $connect;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->database = new Database();
         $this->connect = $this->database->execute();
     }
@@ -24,7 +25,7 @@ abstract class AbstractModel
         try {
             $column = "";
             $values = "";
-            foreach($data as $key => $value) {
+            foreach ($data as $key => $value) {
                 $column .= "$key,";
                 $values .= ":$key,";
             }
@@ -48,11 +49,11 @@ abstract class AbstractModel
     {
         $where = "";
         foreach ($condition as $key => $value) {
-            $where.= "$key = :$key AND ";
+            $where .= "$key = :$key AND ";
         }
         $where = rtrim($where, "AND ");
         $table = $this->table;
-        $sql = "SELECT $column FROM $table WHERE " .$where;
+        $sql = "SELECT $column FROM $table WHERE " . $where;
         $stmt = $this->connect->prepare($sql);
         $stmt->execute($condition);
 
@@ -61,11 +62,11 @@ abstract class AbstractModel
 
 
     public function findAll($condition = [], $column = "*")
-    { 
+    {
         $where = "";
         if (count($condition) > 0) {
             foreach ($condition as $key => $value) {
-                $where.= "$key = :$key AND ";
+                $where .= "$key = :$key AND ";
             }
             $where = rtrim($where, "AND ");
         } else {
@@ -73,20 +74,39 @@ abstract class AbstractModel
         }
 
         $table = $this->table;
-        $sql = "SELECT $column FROM $table WHERE " .$where;
+        $sql = "SELECT $column FROM $table WHERE " . $where;
         $stmt = $this->connect->prepare($sql);
-        if (count($condition) > 0)  {
+        if (count($condition) > 0) {
             $stmt->execute($condition);
         } else {
             $stmt->execute();
         }
-        
+
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function update()
+    public function update($data, $id)
     {
+        try {
+            $set = "";
+            foreach ($data as $key => $value) {
+                $set .= "$key = :$key,";
+            }
 
+            $set = rtrim($set, ",");
+            $table = $this->table;
+            $sql = "UPDATE $table SET $set WHERE id = :id";
+
+            $stmt = $this->connect->prepare($sql);
+            $data["id"] = $id;
+            if ($stmt->execute(params: $data)) {
+                return true;
+            }
+
+            return false;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     public function delete($id)
@@ -106,4 +126,3 @@ abstract class AbstractModel
         return false;
     }
 }
-

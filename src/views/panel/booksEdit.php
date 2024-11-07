@@ -3,7 +3,8 @@
         <h1 class="text-center mb-4">Editar de Livro</h1>
        
 
-        <form method="post">
+        
+        <form method="post" action="/PROJETO_LIVROS/panel/books/edit/<?= $book['id'] ?>">
             <div class="row mb-3">
                 <label for="titulo" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-10">
