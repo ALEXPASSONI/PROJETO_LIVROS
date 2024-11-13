@@ -6,6 +6,7 @@ use Alex\Livros\Routers\Panel\Books\BooksRouters;
 use CoffeeCode\Router\Router;
 use Alex\Livros\Routers\User\UserRouters;
 use Alex\Livros\Controllers\Panel\Books\Teste;
+use Alex\Livros\Routers\LadingPage\LadingPageRouters;
 
 
 class Loader
@@ -15,6 +16,8 @@ class Loader
     private UserRouters $userRouter;
 
     private BooksRouters $booksRouters;
+
+    private LadingPageRouters $ladingPageRouters;
 
     
 
@@ -26,6 +29,7 @@ class Loader
         $this->router = new Router ("http://localhost");
         $this->userRouter = new UserRouters($this->router);
         $this->booksRouters = new BooksRouters($this->router);
+        $this->ladingPageRouters = new LadingPageRouters($this->router);
         
        
     }
@@ -34,9 +38,8 @@ class Loader
     {
         $this->userRouter->execute();  
         $this->booksRouters->execute();  
+        $this->ladingPageRouters->execute();
         $this->router->dispatch();
-
-        
 
         if ($this->router->error()) {
             echo "404";

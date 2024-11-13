@@ -15,7 +15,9 @@ class BooksRouters
 
     }
 
-    public function execute(){
+    public function execute()
+    {
+
         $this->router->namespace('Alex\Livros\Controllers\Panel\Books');
 
         $this->router->get("/panel/books/", 'Books:execute');
@@ -31,6 +33,8 @@ class BooksRouters
         $this->router->get("/panel/books/logout", 'Logout:execute', middleware: UserSession::class);
         
         $this->router->post("/panel/books/create/save", 'CreatePost:execute', middleware: UserSession::class);
+
+        $this->router->get("/panel/books/search", 'Books:execute', middleware: UserSession::class);
 
 
     }

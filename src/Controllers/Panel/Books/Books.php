@@ -16,12 +16,21 @@ class Books
         $this->bookss = new Bookss();
     }
 
-    public function execute()
+    public function execute($data)
     {
-        $bookss = $this->bookss->findAll();
+        $search = "";
+        if (isset($_GET['nameFilter'])) {
+            $search = $_GET['nameFilter'];
+            $bookss = $this->bookss->findAll([
+                "titulo" => $_GET['nameFilter']
+            ]); 
+        } else {
+            $bookss = $this->bookss->findAll();
+        }
 
         $this->template->render('panel/books', true, [
-            "bookss" => $bookss
+            "bookss" => $bookss,
+            "search" => $search
         ]);
     }
 }

@@ -38,3 +38,32 @@
     .img-preview{
       height: 100px;
     }
+
+  
+  
+.books-container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px;
+}
+.container-search button {
+  border: none;
+}
+
+.limpar-container{
+  background-color: #ecc5c5; /* Vermelho */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.3s ease; /* Transição suave para a cor de hover */
+}
+
+.limpar-containe:hover {
+  background-color: #6bd32f; /* Vermelho mais escuro */
+  border: none;
+}
