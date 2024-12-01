@@ -61,7 +61,7 @@ abstract class AbstractModel
     }
 
 
-    public function findAll($condition = [], $column = "*")
+    public function findAll($condition = [], $column = "*", $limit = false)
     {
         $where = "";
         if (count($condition) > 0) {
@@ -72,9 +72,14 @@ abstract class AbstractModel
         } else {
             $where = "1";
         }
+        $whereCodition = $where == "" ? $where : " WHERE " .$where;
 
         $table = $this->table;
-        $sql = "SELECT $column FROM $table WHERE " . $where;
+        if (!$limit) {
+            $sql = "SELECT $column FROM $table" .$whereCodition;
+        } else {
+            $sql = "SELECT $column FROM $table " .$whereCodition . " limit $limit";
+        }
         $stmt = $this->connect->prepare($sql);
         if (count($condition) > 0) {
             $stmt->execute($condition);

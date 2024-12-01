@@ -22,6 +22,8 @@ class ApiBooks
     {
         $bookss = $this->bookss->findAll();
 
-        echo json_encode($bookss);
+        echo json_encode([
+            "total_bookss" => count( $bookss)
+        ]);
     }
 }

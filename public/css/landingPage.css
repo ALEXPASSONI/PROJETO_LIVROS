@@ -32,3 +32,18 @@ body {
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.book-img{
+    width: 100%;
+    height: 450px;
+}
+
+.book-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.font-black{
+    color: black;
+}
