@@ -19,17 +19,16 @@ class LandingPage
 
     public function execute()
     {
-       
-        $books = $this->bookss->findAll([], "*", 100); 
+         
+        // limite de capa 
+        $books = $this->bookss->findAll([], "*", 4); 
 
       
-        
-        // limite de capa 
-        $booksToDisplay = array_slice($books, 0, 3);
-        
+      
+    
         
         $this->template->render("ladingPage/ladingPage", false, [
-            "books" => $booksToDisplay
+            "books" =>  $books
         
         ]);
     
